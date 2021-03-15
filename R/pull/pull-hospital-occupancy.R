@@ -1,7 +1,7 @@
 source(here::here("R/build/attach-packages.R"))
 message(glue("{Sys.time()} -- Starting download of HHS hospital data"))
-
-url <- "https://healthdata.gov/node/3651441/download"
+# TODO The underlying API has changed, but the legacy domain will keep this code working for a few weeks more...
+url <- "https://legacy.healthdata.gov/node/3651441/download"
 
 hospital <- vroom(url, col_types = cols(), guess_max = 1e6)
 
